@@ -1,0 +1,14 @@
+.blob{
+    animation: hue-animation 3s alternate infinite;
+    width: 250px;
+    height: auto;
+}
+
+@keyframes hue-animation{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}

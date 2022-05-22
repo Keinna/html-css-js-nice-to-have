@@ -7,9 +7,12 @@
 a {
   text-decoration: none;
 }
-i {
-  color: $primary;
+
+section {
+  height: 100vh;
+  background-color: rgb(190, 190, 190);
 }
+
 .center {
   text-align: center;
 }
@@ -17,14 +20,3 @@ i {
   margin-top: 50px;
 }
 
-.bg-white {
-  background-color: white;
-}
-
-.bg-light {
-  background-color: $bg-color-light;
-}
-
-.bg-primary {
-  background-color: $primary;
-}
