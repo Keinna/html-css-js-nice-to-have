@@ -19,3 +19,38 @@
     padding: 0.3rem 0.5rem;
   }
 }
+
+input {
+  position: absolute;
+  transform: scale(0);
+}
+
+label {
+  width: 72px;
+  height: 40px;
+  padding: 4px;
+  border-radius: 20px;
+  background: #333;
+}
+
+//The ~ combinator selects siblings. This means that the second element follows the first (though not necessarily immediately), and both share the same parent. Syntax: A ~ B Example: p ~ span will match all <span> elements that follow a <p>, immediately or not.
+
+input:checked ~ label {
+  background: rgb(6, 105, 6);
+}
+
+input:checked ~ label .handle {
+  transform: translateX(32px);
+}
+
+label,
+.handle {
+  transition: transform 0.4s;
+}
+
+.handle {
+  width: 32px;
+  height: 32px;
+  border-radius: inherit;
+  background: #100f10;
+}
