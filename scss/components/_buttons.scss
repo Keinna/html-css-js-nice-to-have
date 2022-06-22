@@ -35,11 +35,11 @@ label {
 
 //The ~ combinator selects siblings. This means that the second element follows the first (though not necessarily immediately), and both share the same parent. Syntax: A ~ B Example: p ~ span will match all <span> elements that follow a <p>, immediately or not.
 
-input:checked ~ label {
+.input-switch:checked ~ .label-switch {
   background: rgb(6, 105, 6);
 }
 
-input:checked ~ label .handle {
+.input-switch:checked ~ .label-switch .handle {
   transform: translateX(32px);
 }
 
@@ -53,4 +53,43 @@ label,
   height: 32px;
   border-radius: inherit;
   background: #100f10;
+}
+
+#toggle {
+  display: none;
+}
+
+.toggle-button {
+  display: inline-block;
+  width: 90px;
+  height: 35px;
+  background-color: #fff;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-button::after {
+  content: url("/assets/sun.svg");
+  width: 42px;
+  height: 42px;
+  background-color: rgb(255, 196, 0);
+  border: 2px solid white;
+  border-radius: 50%;
+  position: absolute;
+  top: -4px;
+  left: 0;
+  display: grid;
+  place-content: center;
+  line-height: 0;
+  transition: all 1s ease;
+}
+
+#toggle:checked + .toggle-button::after {
+  content: url("/assets/moon.svg");
+  background-color: #333;
+  transform: translateX(50px) rotate(360deg);
+}
+
+.toggle-button:checked {
+  background-color: #333;
 }
